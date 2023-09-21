@@ -36,7 +36,7 @@ Function({
     desc: 'It converts text to sound.',
     type: 'misc'
 }, async (message, match) => {
-    if (!(match || message.quoted.text)) return await message.reply('_Need Text!_\n_Example: tts Hello_\n_tts Hello {en}_');
+    if (!(match || message.quoted.text)) return await message.reply('_Need Text!_\n_Example: tts Hello_\n_tts Hello {tr}_');
     let LANG = config.LANG.toLowerCase();
     const lang = match.match("\\{([a-z]+)\\}");
     if (lang) {
