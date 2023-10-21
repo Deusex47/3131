@@ -118,13 +118,13 @@ const { content_length } = await video(search.videos[0].videoId, false);
 const msg = `*${search.videos[0].title}* 
 
 *⬡ ID :* ${search.videos[0].videoId}
-*⬡ Duration :* ${search.videos[0].timestamp}
-*⬡ Viewers :* ${h2k(search.videos[0].views)}
-*⬡ Author :* ${search.videos[0].author.name}
-*⬡ Audio Size :* ${bytesToSize(audio.content_length)}
-*⬡ Video Size :* ${bytesToSize(content_length)}
+*⬡ Süre :* ${search.videos[0].timestamp}
+*⬡ izlenme :* ${h2k(search.videos[0].views)}
+*⬡ sahibi :* ${search.videos[0].author.name}
+*⬡ Ses Boyutu :* ${bytesToSize(audio.content_length)}
+*⬡ Video Boyutu :* ${bytesToSize(content_length)}
 
-1. *Audio*
+1. *ses*
 2. *Video*`
 await message.send(await getYoutubeThumbnail(search.videos[0].videoId), 'image', { caption: msg})
 })
@@ -158,7 +158,7 @@ Function({
 	const search = await yts(match)
 	if (search.all.length < 1) return await message.reply(Lang.NO_RESULT);
 	let no = 1;
-	let listText = `${t}Search results for ${match}:${t}\n\n*Format: audio*\n_To download, please reply with the desired title number._\n\n`;
+	let listText = `${t}arama sonuçları${match}:${t}\n\n*Format: audio*\n_İndirmek için lütfen istediğiniz başlık numarasıyla yanıt verin._\n\n`;
 	for (let i of search.all) {
 	if (i.type == 'video') {
     listText += `${no++}. *${i.title}*\nhttps://youtu.be/${i.url.match(/(?<=\?v=)[^&]+/)[0]}\n\n`;
