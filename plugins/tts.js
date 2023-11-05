@@ -32,7 +32,7 @@ const convertTextToSound = async (text, lang) => {
 
 Function({
     pattern: 'tts ?(.*)',
-    fromMe: isPublic,
+    fromMe: true,
     desc: 'It converts text to sound.',
     type: 'misc'
 }, async (message, match) => {
